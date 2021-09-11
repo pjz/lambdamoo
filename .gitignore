@@ -11,3 +11,5 @@ moo
 *.db
 \#*\#
 .\#*
+/parser.c
+zig-cache/
