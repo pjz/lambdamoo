@@ -43,6 +43,10 @@ extern Var complex_var_ref(Var);
 extern Var complex_var_dup(Var);
 extern int var_refcount(Var);
 
+#define addref(X) (++((int *)(X))[-1])
+#define delref(X) (--((int *)(X))[-1])
+#define refcount(X) (((int *)(X))[-1])
+
 static inline void
 free_var(Var v)
 {

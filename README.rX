@@ -206,13 +206,6 @@ pattern.c:
 fastmap was allocated with mymalloc() but freed with the normal
 free().  Fixed.
 
-ref_count.c:
-
-Refcounts are now allocated as part of objects that can be
-addref()'d.  This allows macros to manipulate those counts and makes a
-request for the current refcount of an object much cheaper.  This
-completely replaces the old hash table implementation.
-
 storage.c:
 
 There's now a canonical empty string.
@@ -230,6 +223,11 @@ If a forked task was killed before it ever started, it leaked some
 memory.  Fixed.
 
 utils.c:
+
+Refcounts are now allocated as part of objects that can be
+addref()'d.  This allows macros to manipulate those counts and makes a
+request for the current refcount of an object much cheaper.  This
+completely replaces the old hash table implementation.
 
 var_refcount(Var v) added.  Returns the refcount of any Var.
 
